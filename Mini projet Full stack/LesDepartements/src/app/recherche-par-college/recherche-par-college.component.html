@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id Departement</th>
+                        <th>Nom de departement</th>
+                        <th>Nombre d employee </th>
+                        <th>Date d'affectation </th>
+                        <th></th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody >
+
+
+                    <tr>
+                        <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+                            <label>Colleges </label>
+                            <select class="form-control form-control-lg" id="idCat" name="idCat"
+                                [(ngModel)]="idCollege" (change)="onChange()">
+                                <option *ngFor="let col of colleges" value="{{col.idCol}}">
+                                    {{col.nomCol}}
+                                </option>
+                            </select>
+                        </div>
+                        <!-- <td>{{departement.nomDepartement}}</td>
+                        <td>{{departement.nombreEmployee}}</td>
+                        <td>{{departement.dateAffectation }}</td>
+                        <td>{{departement.college.nomCol }}</td>
+                        <td><button type="button" (click)="" class="btn btn-danger"> Supprimer</button>
+                        <td><a class="btn btn-success"
+                                [routerLink]="['/updateDepartement',departement.idDepartement]">Modifier</a></td> -->
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

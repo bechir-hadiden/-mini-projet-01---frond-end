@@ -1,0 +1,38 @@
+<div class="container">
+    <div>
+        <h2>Modifier un Produit :</h2>
+    </div>
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Departement</label>
+            <input  type="text" [(ngModel)]="currentDepartement.idDepartement" name="idDepartement"
+                class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Departement</label>
+            <input type="text" [(ngModel)]="currentDepartement.nomDepartement" name="nomDepartement"
+                class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Nombre d'employee</label>
+            <input type="number" [(ngModel)]="currentDepartement.nombreEmployee" name="nombreEmployee"
+                class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date d'affectation</label>
+            <input type="date" [ngModel]="currentDepartement.dateAffectation| date: 'yyyy-MM-dd'"
+                (ngModelChange)=" currentDepartement.dateAffectation= $event" name="dateCreation" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <select class="form-control form-control-lg" id="idCat" name="idCat" [(ngModel)]="updatedColId">
+                <option *ngFor="let col of colleges" [value]="col.idCol">
+                    {{col.nomCol}}
+                </option>
+            </select>
+        </div>
+        <div class="mt-2">
+            <button type="submit" (click)="updateDepartement()" class="btn btn-success">Modifer</button>
+        </div>
+    </form>
+</div>
